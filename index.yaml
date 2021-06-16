@@ -1,0 +1,118 @@
+apiVersion: v1
+entries:
+  jenkins:
+  - apiVersion: v1
+    appVersion: lts
+    created: "2021-06-16T11:09:53.7076943+01:00"
+    description: Open source continuous integration server. It supports multiple SCM
+      tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
+      Maven-based projects as well as arbitrary scripts.
+    digest: 5f41ddf07bfbd62eff7ff166a4cf0439ab3e69daf6ae29d9a6b387c15771cd61
+    home: https://jenkins.io/
+    icon: https://wiki.jenkins-ci.org/download/attachments/2916393/logo.png
+    maintainers:
+    - email: lachlan.evenson@microsoft.com
+      name: lachie83
+    - email: viglesias@google.com
+      name: viglesiasce
+    - email: maor.friedman@redhat.com
+      name: maorfr
+    - email: mail@torstenwalter.de
+      name: torstenwalter
+    - email: garridomota@gmail.com
+      name: mogaal
+    - email: wmcdona89@gmail.com
+      name: wmcdona89
+    name: jenkins
+    sources:
+    - https://github.com/jenkinsci/jenkins
+    - https://github.com/jenkinsci/docker-jnlp-slave
+    - https://github.com/maorfr/kube-tasks
+    - https://github.com/jenkinsci/configuration-as-code-plugin
+    urls:
+    - https://github.com/Elros-Virtual/helm-charts.git/jenkins-2.3.3.tgz
+    version: 2.3.3
+  moodle:
+  - annotations:
+      category: E-Learning
+    apiVersion: v2
+    appVersion: 3.10.4
+    created: "2021-06-16T11:09:53.723153+01:00"
+    dependencies:
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.x.x
+    description: Moodle(TM) is a learning platform designed to provide educators,
+      administrators and learners with a single robust, secure and integrated system
+      to create personalised learning environments
+    digest: 868831c7dee12c58285a7c4cb9f83e3287e8282bdbc6771a1d93f9263a6f0d8a
+    home: https://github.com/bitnami/charts/tree/master/bitnami/moodle
+    icon: https://bitnami.com/assets/stacks/moodle/img/moodle-stack-220x234.png
+    keywords:
+    - moodle
+    - learning
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: moodle
+    sources:
+    - https://github.com/bitnami/bitnami-docker-moodle
+    - http://www.moodle.org/
+    urls:
+    - https://github.com/Elros-Virtual/helm-charts.git/moodle-11.0.10.tgz
+    version: 11.0.10
+  nginx-ingress:
+  - apiVersion: v1
+    appVersion: 0.32.0
+    created: "2021-06-16T11:09:53.7251537+01:00"
+    description: An nginx Ingress controller that uses ConfigMap to store the nginx
+      configuration.
+    digest: 1d077c6b61d3656b8be093646b7e74c28398154a4a226e832ad3b9c2168d1bd8
+    home: https://github.com/kubernetes/ingress-nginx
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/500px-Nginx_logo.svg.png
+    keywords:
+    - ingress
+    - nginx
+    kubeVersion: '>=1.10.0-0'
+    maintainers:
+    - name: ChiefAlexander
+    - email: Trevor.G.Wood@gmail.com
+      name: taharah
+    name: nginx-ingress
+    sources:
+    - https://github.com/kubernetes/ingress-nginx
+    urls:
+    - https://github.com/Elros-Virtual/helm-charts.git/nginx-ingress-1.40.3.tgz
+    version: 1.40.3
+  vault:
+  - apiVersion: v2
+    appVersion: 1.7.2
+    created: "2021-06-16T11:09:53.7288612+01:00"
+    description: Official HashiCorp Vault Chart
+    digest: 061ad1bc1d43ab998f6a7b5a11b175f0d637ee9847fa196acfa721b11093d527
+    home: https://www.vaultproject.io
+    icon: https://github.com/hashicorp/vault/raw/f22d202cde2018f9455dec755118a9b84586e082/Vault_PrimaryLogo_Black.png
+    keywords:
+    - vault
+    - security
+    - encryption
+    - secrets
+    - management
+    - automation
+    - infrastructure
+    kubeVersion: '>= 1.14.0-0'
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault
+    - https://github.com/hashicorp/vault-helm
+    - https://github.com/hashicorp/vault-k8s
+    - https://github.com/hashicorp/vault-csi-provider
+    urls:
+    - https://github.com/Elros-Virtual/helm-charts.git/vault-0.12.0.tgz
+    version: 0.12.0
+generated: "2021-06-16T11:09:53.7026551+01:00"
