@@ -3,7 +3,7 @@ entries:
   jenkins:
   - apiVersion: v1
     appVersion: lts
-    created: "2021-06-16T11:09:53.7076943+01:00"
+    created: "2021-06-16T14:26:16.860027+01:00"
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -30,14 +30,14 @@ entries:
     - https://github.com/maorfr/kube-tasks
     - https://github.com/jenkinsci/configuration-as-code-plugin
     urls:
-    - https://github.com/Elros-Virtual/helm-charts.git/jenkins-2.3.3.tgz
+    - https://mattiaperi.github.io/helm-chart/jenkins/jenkins-2.3.3.tgz
     version: 2.3.3
   moodle:
   - annotations:
       category: E-Learning
     apiVersion: v2
     appVersion: 3.10.4
-    created: "2021-06-16T11:09:53.723153+01:00"
+    created: "2021-06-16T14:26:16.8645642+01:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -64,12 +64,12 @@ entries:
     - https://github.com/bitnami/bitnami-docker-moodle
     - http://www.moodle.org/
     urls:
-    - https://github.com/Elros-Virtual/helm-charts.git/moodle-11.0.10.tgz
+    - https://mattiaperi.github.io/helm-chart/moodle/moodle-11.0.10.tgz
     version: 11.0.10
   nginx-ingress:
   - apiVersion: v1
     appVersion: 0.32.0
-    created: "2021-06-16T11:09:53.7251537+01:00"
+    created: "2021-06-16T14:26:16.8565576+01:00"
     description: An nginx Ingress controller that uses ConfigMap to store the nginx
       configuration.
     digest: 1d077c6b61d3656b8be093646b7e74c28398154a4a226e832ad3b9c2168d1bd8
@@ -87,12 +87,12 @@ entries:
     sources:
     - https://github.com/kubernetes/ingress-nginx
     urls:
-    - https://github.com/Elros-Virtual/helm-charts.git/nginx-ingress-1.40.3.tgz
+    - https://mattiaperi.github.io/helm-chart/ingress/nginx-ingress-1.40.3.tgz
     version: 1.40.3
   vault:
   - apiVersion: v2
     appVersion: 1.7.2
-    created: "2021-06-16T11:09:53.7288612+01:00"
+    created: "2021-06-16T14:26:16.867064+01:00"
     description: Official HashiCorp Vault Chart
     digest: 061ad1bc1d43ab998f6a7b5a11b175f0d637ee9847fa196acfa721b11093d527
     home: https://www.vaultproject.io
@@ -113,6 +113,6 @@ entries:
     - https://github.com/hashicorp/vault-k8s
     - https://github.com/hashicorp/vault-csi-provider
     urls:
-    - https://github.com/Elros-Virtual/helm-charts.git/vault-0.12.0.tgz
+    - https://mattiaperi.github.io/helm-chart/vault/vault-0.12.0.tgz
     version: 0.12.0
-generated: "2021-06-16T11:09:53.7026551+01:00"
+generated: "2021-06-16T14:26:16.8540613+01:00"
