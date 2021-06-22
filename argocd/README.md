@@ -395,3 +395,16 @@ through `xxx.extraArgs`
 | redis-ha.image.tag | Redis tag | `"6.2.1-alpine"` |
 
 [gRPC-ingress]: https://argoproj.github.io/argo-cd/operator-manual/ingress/
+
+
+# Additional notes
+
+If you cannot access UI, perform the following 
+
+https://www.browserling.com/tools/bcrypt  https://argoproj.github.io/argo-cd/faq/
+
+kubectl -n argocd patch secret argocd-secret \
+  -p '{"stringData": {
+    "admin.password": "$2a$10$cki2pnAXFg.NIYXpHQuepOSX7SNfrRzq8oFVV0fo9Io.Hm8WNqPx2",
+    "admin.passwordMtime": "'$(date +%FT%T%Z)'"
+  }}'
