@@ -297,7 +297,7 @@ dex:
 
 ## Redis
 redis:
-  enabled: false
+  enabled: true
   name: redis
 
   image:
@@ -316,7 +316,9 @@ redis:
 
   ## Environment variables to pass to the Redis server
   ##
-  env: []
+  env: 
+    - name: ARGOCD_MAX_CONCURRENT_LOGIN_REQUESTS_COUNT
+      value: "0"
 
   ## envFrom to pass to the Redis server
   ##
@@ -706,7 +708,189 @@ server:
   #       recurse: true
     destination:
         server: https://kubernetes.default.svc
-        namespace: "*"
+        namespace: default
+    syncPolicy:
+     automated:
+       prune: false
+       selfHeal: true
+  - name: castle-of-paint
+  #   namespace: argocd
+  #   additionalLabels: {}
+  #   additionalAnnotations: {}
+    project: default
+    source:
+      repoURL: https://github.com/Elros-Virtual/infrastructure.git
+      targetRevision: HEAD
+      path: kubernetes/deployments/castle-of-paint/
+  #     directory:
+  #       recurse: true
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+    syncPolicy:
+     automated:
+       prune: false
+       selfHeal: true
+  - name: ian-cv-site
+  #   namespace: argocd
+  #   additionalLabels: {}
+  #   additionalAnnotations: {}
+    project: default
+    source:
+      repoURL: https://github.com/Elros-Virtual/infrastructure.git
+      targetRevision: HEAD
+      path: kubernetes/deployments/ian-cv-site/
+  #     directory:
+  #       recurse: true
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+    syncPolicy:
+     automated:
+       prune: false
+       selfHeal: true
+  - name: toby-hobby-site
+  #   namespace: argocd
+  #   additionalLabels: {}
+  #   additionalAnnotations: {}
+    project: default
+    source:
+      repoURL: https://github.com/Elros-Virtual/infrastructure.git
+      targetRevision: HEAD
+      path: kubernetes/deployments/toby-hobby-site/
+  #     directory:
+  #       recurse: true
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+    syncPolicy:
+     automated:
+       prune: false
+       selfHeal: true
+  - name: toby-cv-site
+  #   namespace: argocd
+  #   additionalLabels: {}
+  #   additionalAnnotations: {}
+    project: default
+    source:
+      repoURL: https://github.com/Elros-Virtual/infrastructure.git
+      targetRevision: HEAD
+      path: kubernetes/deployments/toby-cv-site/
+  #     directory:
+  #       recurse: true
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+    syncPolicy:
+     automated:
+       prune: false
+       selfHeal: true
+  - name: shaynemeissner
+  #   namespace: argocd
+  #   additionalLabels: {}
+  #   additionalAnnotations: {}
+    project: default
+    source:
+      repoURL: https://github.com/Elros-Virtual/infrastructure.git
+      targetRevision: HEAD
+      path: kubernetes/deployments/shaynemeissner/
+  #     directory:
+  #       recurse: true
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+  #  syncPolicy:
+  #    automated:
+  #      prune: false
+  #      selfHeal: false
+  - name: vault
+  #   namespace: argocd
+  #   additionalLabels: {}
+  #   additionalAnnotations: {}
+    project: default
+    source:
+      repoURL: https://github.com/Elros-Virtual/helm-charts.git
+      targetRevision: HEAD
+      path: vault
+      helm:
+         parameters: []
+         releaseName: vault
+         valueFiles:
+         - values.yaml
+  #     directory:
+  #       recurse: true
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+  #  syncPolicy:
+  #    automated:
+  #      prune: false
+  #      selfHeal: false
+  - name: ingress
+  #   namespace: argocd
+  #   additionalLabels: {}
+  #   additionalAnnotations: {}
+    project: default
+    source:
+      repoURL: https://github.com/Elros-Virtual/helm-charts.git
+      targetRevision: HEAD
+      path: ingress
+      helm:
+         parameters: []
+         releaseName: ingress
+         valueFiles:
+         - values.yaml
+  #     directory:
+  #       recurse: true
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+  #  syncPolicy:
+  #    automated:
+  #      prune: false
+  #      selfHeal: false
+  - name: argo
+  #   namespace: argocd
+  #   additionalLabels: {}
+  #   additionalAnnotations: {}
+    project: default
+    source:
+      repoURL: https://github.com/Elros-Virtual/helm-charts.git
+      targetRevision: HEAD
+      path: argocd
+      helm:
+         parameters: []
+         releaseName: argo
+         valueFiles:
+         - values.yaml
+  #     directory:
+  #       recurse: true
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+  #  syncPolicy:
+  #    automated:
+  #      prune: false
+  #      selfHeal: false
+  - name: jenkins
+  #   namespace: argocd
+  #   additionalLabels: {}
+  #   additionalAnnotations: {}
+    project: default
+    source:
+      repoURL: https://github.com/Elros-Virtual/helm-charts.git
+      targetRevision: HEAD
+      path: jenkins
+      helm:
+         parameters: []
+         releaseName: jenkins
+         valueFiles:
+         - values.yaml
+  #     directory:
+  #       recurse: true
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: default
   #  syncPolicy:
   #    automated:
   #      prune: false
