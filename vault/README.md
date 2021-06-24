@@ -42,3 +42,44 @@ Please see the many options supported in the `values.yaml` file. These are also
 fully documented directly on the [Vault
 website](https://www.vaultproject.io/docs/platform/k8s/helm) along with more
 detailed installation instructions.
+
+
+# Manaul steps to be taken after helm chart install. 
+
+# Check pod vault is running on pod (Kubectl get pod should show it as not ready)
+
+  kubectl exec -it vault-0 -- vault -h (This is running the "vault help" command inside of the container)
+
+# The vault server need to be initialized, the initialization generates the cred to unseal vault
+
+  kubectl exec vault-0 -- vault operator init -format=json > cluster-keys.json (This will output the keys to a file called cluster-keys.json at your current direcotry)
+
+# Unseal vault 
+
+  Run the following to get the keyts from the above file:
+
+    cat cluster-keys.json | jq -r ".unseal_keys_b64[]"
+
+  Now applly one key to the variable
+
+    VAULT_UNSEAL_KEY=$key from above
+
+  Now run this command to start the unseal process
+    kubectl exec vault-0 -- vault operator unseal $VAULT_UNSEAL_KEY
+
+# Log into container adn then Vault
+
+  In order for you to perform more vault command log into the vaul container with the following command
+
+    kubectl exec -it vault-0 -- sh  
+
+  Now you need to log into the vault with the inital key you got from the cluster-keys.json file from before
+
+    Vault login
+
+  Now provide the inital key and you will be authenticated with vault
+
+#  
+
+vault write auth/kubernetes/config  token_reviewer_jwt="$(cat /var/run/secrets/kubernetes.io/serviceaccount/token kubernetes_host="https://kubernetes.default.svc:443" kubernetes_ca_cert=@/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+
