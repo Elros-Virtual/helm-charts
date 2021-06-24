@@ -3,10 +3,31 @@ entries:
   argo-cd:
   - apiVersion: v2
     appVersion: 2.0.3
-    created: "2021-06-22T13:39:01.4445372+01:00"
+    created: "2021-06-24T15:23:12.8166311+01:00"
     description: A Helm chart for ArgoCD, a declarative, GitOps continuous delivery
       tool for Kubernetes.
-    digest: 0397f8dc7e3d5e6b8c53c5bb9722263fee2695845b264fa2d6dab29263915ca7
+    digest: a6067ae287591b31935c627bb4aa823a4d25b0f4951cc773221d7f062d6d2ce7
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo/master/docs/assets/argo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: alexec
+    - name: alexmt
+    - name: jessesuen
+    - name: seanson
+    name: argo-cd
+    urls:
+    - argocd/argo-cd-3.6.9.tgz
+    version: 3.6.9
+  - apiVersion: v2
+    appVersion: 2.0.3
+    created: "2021-06-24T15:23:12.8121312+01:00"
+    description: A Helm chart for ArgoCD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 1b0335eeb741ca3b392b886335f84dd8cebc3086d2e3da20137a033bb527e3b7
     home: https://github.com/argoproj/argo-helm
     icon: https://raw.githubusercontent.com/argoproj/argo/master/docs/assets/argo.png
     keywords:
@@ -25,7 +46,7 @@ entries:
   jenkins:
   - apiVersion: v1
     appVersion: lts
-    created: "2021-06-22T13:39:01.4631164+01:00"
+    created: "2021-06-24T15:23:12.8345931+01:00"
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -59,7 +80,7 @@ entries:
       category: E-Learning
     apiVersion: v2
     appVersion: 3.10.4
-    created: "2021-06-22T13:39:01.4756236+01:00"
+    created: "2021-06-24T15:23:12.8456335+01:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -91,7 +112,7 @@ entries:
   nginx-ingress:
   - apiVersion: v1
     appVersion: 0.32.0
-    created: "2021-06-22T13:39:01.4540061+01:00"
+    created: "2021-06-24T15:23:12.8261304+01:00"
     description: An nginx Ingress controller that uses ConfigMap to store the nginx
       configuration.
     digest: 1d077c6b61d3656b8be093646b7e74c28398154a4a226e832ad3b9c2168d1bd8
@@ -114,7 +135,7 @@ entries:
   vault:
   - apiVersion: v2
     appVersion: 1.7.2
-    created: "2021-06-22T13:39:01.492062+01:00"
+    created: "2021-06-24T15:23:12.8541351+01:00"
     description: Official HashiCorp Vault Chart
     digest: 061ad1bc1d43ab998f6a7b5a11b175f0d637ee9847fa196acfa721b11093d527
     home: https://www.vaultproject.io
@@ -137,4 +158,4 @@ entries:
     urls:
     - vault/vault-0.12.0.tgz
     version: 0.12.0
-generated: "2021-06-22T13:39:01.427579+01:00"
+generated: "2021-06-24T15:23:12.80013+01:00"
