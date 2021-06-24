@@ -843,7 +843,7 @@ server:
          releaseName: ingress
          valueFiles:
          - values.yaml
-      chart: ingress
+      chart: nginx-ingress
   #     directory:
   #       recurse: true
     destination:
@@ -861,14 +861,14 @@ server:
     project: default
     source:
       repoURL:  https://elros-virtual.github.io/helm-charts/
-      targetRevision: 3.6.10
+      targetRevision: 3.6.11
       path: argocd
       helm:
          parameters: []
          releaseName: argo
          valueFiles:
          - values.yaml
-      chart: argocd
+      chart: argo-cd
   #     directory:
   #       recurse: true
     destination:
