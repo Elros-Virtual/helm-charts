@@ -810,7 +810,7 @@ server:
   #   additionalAnnotations: {}
     project: default
     source:
-      repoURL: https://github.com/Elros-Virtual/helm-charts.git
+      repoURL:  https://elros-virtual.github.io/helm-charts/
       targetRevision: 0.12.0
       path: vault
       helm:
@@ -835,7 +835,7 @@ server:
   #   additionalAnnotations: {}
     project: default
     source:
-      repoURL: https://github.com/Elros-Virtual/helm-charts.git
+      repoURL:  https://elros-virtual.github.io/helm-charts/
       targetRevision: 1.40.3
       path: ingress
       helm:
@@ -860,7 +860,7 @@ server:
   #   additionalAnnotations: {}
     project: default
     source:
-      repoURL: https://github.com/Elros-Virtual/helm-charts.git
+      repoURL:  https://elros-virtual.github.io/helm-charts/
       targetRevision: 3.6.9
       path: argocd
       helm:
@@ -885,7 +885,7 @@ server:
   #   additionalAnnotations: {}
     project: default
     source:
-      repoURL: https://github.com/Elros-Virtual/helm-charts.git
+      repoURL:  https://elros-virtual.github.io/helm-charts/
       targetRevision: 2.3.3
       path: jenkins
       helm:
